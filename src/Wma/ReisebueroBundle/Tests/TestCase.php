@@ -6,10 +6,18 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class TestCase extends WebTestCase {
     protected static $entity = null;
+    protected $em = null;
     
-    public function setUp()
+    public function setUp() {
+        parent::setUp();
+        //$this->truncate();
+        $this->getEm()->beginTransaction();
+    }
+    
+    public function tearDown()
     {
-        $this->truncate();
+        parent::tearDown();
+        $this->getEm()->getConnection()->rollback();
     }
     
     protected function getKernel()
@@ -25,7 +33,10 @@ class TestCase extends WebTestCase {
      */
     protected function getEm()
     {
-        return $this->getKernel()->getContainer()->get('doctrine.orm.entity_manager');
+        if (! $this->em ) {
+            $this->em = $this->getKernel()->getContainer()->get('doctrine.orm.entity_manager');
+        }
+        return $this->em;
     }
     
     protected function getValidator()
@@ -42,7 +53,10 @@ class TestCase extends WebTestCase {
     
     protected function truncate()
     {
-        $this->getEm()->getConnection()->executeQuery("TRUNCATE TABLE " . $this->getTableName());
+        $conn = $this->getEm()->getConnection();
+        $conn->executeQuery("TRUNCATE TABLE reisen");
+        $conn->executeQuery("TRUNCATE TABLE kategorien");
+        $conn->executeQuery("TRUNCATE TABLE regionen");
     }
 }
 

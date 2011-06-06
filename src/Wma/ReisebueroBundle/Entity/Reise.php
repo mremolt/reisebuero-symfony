@@ -68,6 +68,16 @@ class Reise
      * @ORM\Column(type="string", nullable="true")
      */
     private $thumbnail;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Kategorie", inversedBy="reisen")
+     */
+    private $kategorie;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Region", inversedBy="reisen")
+     */
+    private $region;
 
     /**
      * Get id
@@ -237,5 +247,45 @@ class Reise
     public function getThumbnail()
     {
         return $this->thumbnail;
+    }
+
+    /**
+     * Set kategorie
+     *
+     * @param Wma\ReisebueroBundle\Entity\Kategorie $kategorie
+     */
+    public function setKategorie(\Wma\ReisebueroBundle\Entity\Kategorie $kategorie)
+    {
+        $this->kategorie = $kategorie;
+    }
+
+    /**
+     * Get kategorie
+     *
+     * @return Wma\ReisebueroBundle\Entity\Kategorie $kategorie
+     */
+    public function getKategorie()
+    {
+        return $this->kategorie;
+    }
+
+    /**
+     * Set region
+     *
+     * @param Wma\ReisebueroBundle\Entity\Region $region
+     */
+    public function setRegion(\Wma\ReisebueroBundle\Entity\Region $region)
+    {
+        $this->region = $region;
+    }
+
+    /**
+     * Get region
+     *
+     * @return Wma\ReisebueroBundle\Entity\Region $region
+     */
+    public function getRegion()
+    {
+        return $this->region;
     }
 }
