@@ -18,6 +18,9 @@ $loader->registerNamespaces(array(
     # migrations
     'Doctrine\\DBAL\\Migrations' => __DIR__.'/../vendor/doctrine-migrations/lib',
     'Doctrine\\DBAL'             => __DIR__.'/../vendor/doctrine-dbal/lib',
+    
+    # Our project
+    'Wma'             => __DIR__.'/../src',
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
