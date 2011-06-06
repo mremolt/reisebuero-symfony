@@ -1,0 +1,48 @@
+[2011-06-06 11:14:30] request.ERROR: No route found for "GET /" 
+[2011-06-06 11:14:30] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/mremolt/workspace/reisebuero/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/RequestListener.php line 115 
+[2011-06-06 11:14:30] request.INFO: Using controller "Symfony\Bundle\FrameworkBundle\Controller\ExceptionController::showAction" 
+[2011-06-06 11:14:33] request.ERROR: No route found for "GET /" 
+[2011-06-06 11:14:33] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/mremolt/workspace/reisebuero/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/RequestListener.php line 115 
+[2011-06-06 11:14:33] request.INFO: Using controller "Symfony\Bundle\FrameworkBundle\Controller\ExceptionController::showAction" 
+[2011-06-06 11:15:02] request.ERROR: No route found for "GET /" 
+[2011-06-06 11:15:02] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/mremolt/workspace/reisebuero/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/RequestListener.php line 115 
+[2011-06-06 11:15:02] request.INFO: Using controller "Symfony\Bundle\FrameworkBundle\Controller\ExceptionController::showAction" 
+[2011-06-06 11:15:03] request.ERROR: No route found for "GET /" 
+[2011-06-06 11:15:03] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/mremolt/workspace/reisebuero/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/RequestListener.php line 115 
+[2011-06-06 11:15:03] request.INFO: Using controller "Symfony\Bundle\FrameworkBundle\Controller\ExceptionController::showAction" 
+[2011-06-06 11:15:12] request.ERROR: No route found for "GET /" 
+[2011-06-06 11:15:12] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/mremolt/workspace/reisebuero/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/RequestListener.php line 115 
+[2011-06-06 11:15:12] request.INFO: Using controller "Symfony\Bundle\FrameworkBundle\Controller\ExceptionController::showAction" 
+[2011-06-06 11:15:13] request.ERROR: No route found for "GET /" 
+[2011-06-06 11:15:13] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/mremolt/workspace/reisebuero/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/RequestListener.php line 115 
+[2011-06-06 11:15:13] request.INFO: Using controller "Symfony\Bundle\FrameworkBundle\Controller\ExceptionController::showAction" 
+[2011-06-06 11:15:13] request.ERROR: No route found for "GET /" 
+[2011-06-06 11:15:13] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/mremolt/workspace/reisebuero/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/RequestListener.php line 115 
+[2011-06-06 11:15:13] request.INFO: Using controller "Symfony\Bundle\FrameworkBundle\Controller\ExceptionController::showAction" 
+[2011-06-06 11:15:14] request.ERROR: No route found for "GET /" 
+[2011-06-06 11:15:14] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/mremolt/workspace/reisebuero/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/RequestListener.php line 115 
+[2011-06-06 11:15:14] request.INFO: Using controller "Symfony\Bundle\FrameworkBundle\Controller\ExceptionController::showAction" 
+[2011-06-06 11:15:15] request.ERROR: No route found for "GET /" 
+[2011-06-06 11:15:15] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/mremolt/workspace/reisebuero/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/RequestListener.php line 115 
+[2011-06-06 11:15:15] request.INFO: Using controller "Symfony\Bundle\FrameworkBundle\Controller\ExceptionController::showAction" 
+[2011-06-06 11:16:55] request.ERROR: No route found for "GET /" 
+[2011-06-06 11:16:55] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/mremolt/workspace/reisebuero/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/RequestListener.php line 115 
+[2011-06-06 11:16:55] request.INFO: Using controller "Symfony\Bundle\FrameworkBundle\Controller\ExceptionController::showAction" 
+[2011-06-06 11:16:57] request.ERROR: No route found for "GET /" 
+[2011-06-06 11:16:57] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/mremolt/workspace/reisebuero/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/RequestListener.php line 115 
+[2011-06-06 11:16:57] request.INFO: Using controller "Symfony\Bundle\FrameworkBundle\Controller\ExceptionController::showAction" 
+[2011-06-06 11:16:58] request.ERROR: No route found for "GET /" 
+[2011-06-06 11:16:58] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/mremolt/workspace/reisebuero/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/RequestListener.php line 115 
+[2011-06-06 11:16:58] request.INFO: Using controller "Symfony\Bundle\FrameworkBundle\Controller\ExceptionController::showAction" 
+[2011-06-06 11:16:58] request.ERROR: No route found for "GET /" 
+[2011-06-06 11:16:58] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/mremolt/workspace/reisebuero/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/RequestListener.php line 115 
+[2011-06-06 11:16:58] request.INFO: Using controller "Symfony\Bundle\FrameworkBundle\Controller\ExceptionController::showAction" 
+[2011-06-06 11:16:58] request.ERROR: No route found for "GET /" 
+[2011-06-06 11:16:58] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/mremolt/workspace/reisebuero/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/RequestListener.php line 115 
+[2011-06-06 11:16:58] request.INFO: Using controller "Symfony\Bundle\FrameworkBundle\Controller\ExceptionController::showAction" 
+[2011-06-06 11:16:59] request.ERROR: No route found for "GET /" 
+[2011-06-06 11:16:59] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/mremolt/workspace/reisebuero/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/RequestListener.php line 115 
+[2011-06-06 11:16:59] request.INFO: Using controller "Symfony\Bundle\FrameworkBundle\Controller\ExceptionController::showAction" 
+[2011-06-06 11:16:59] request.ERROR: No route found for "GET /" 
+[2011-06-06 11:16:59] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /" (uncaught exception) at /home/mremolt/workspace/reisebuero/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/RequestListener.php line 115 
+[2011-06-06 11:16:59] request.INFO: Using controller "Symfony\Bundle\FrameworkBundle\Controller\ExceptionController::showAction" 
