@@ -78,6 +78,12 @@ class Reise
      * @ORM\ManyToOne(targetEntity="Region", inversedBy="reisen")
      */
     private $region;
+    
+    /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @ORM\OneToMany(targetEntity="Buchung", mappedBy="reise")
+     */
+    private $buchungen;
 
     /**
      * Get id

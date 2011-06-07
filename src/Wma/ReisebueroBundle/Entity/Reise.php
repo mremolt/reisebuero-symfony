@@ -78,6 +78,18 @@ class Reise
      * @ORM\ManyToOne(targetEntity="Region", inversedBy="reisen")
      */
     private $region;
+    
+    /**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @ORM\OneToMany(targetEntity="Buchung", mappedBy="reise")
+     */
+    private $buchungen;
+    
+    
+    public function __construct()
+    {
+        $this->buchungen = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -287,5 +299,25 @@ class Reise
     public function getRegion()
     {
         return $this->region;
+    }
+    
+    /**
+     * Add buchungen
+     *
+     * @param Wma\ReisebueroBundle\Entity\Buchung $buchungen
+     */
+    public function addBuchungen(\Wma\ReisebueroBundle\Entity\Buchung $buchungen)
+    {
+        $this->buchungen[] = $buchungen;
+    }
+
+    /**
+     * Get buchungen
+     *
+     * @return Doctrine\Common\Collections\Collection $buchungen
+     */
+    public function getBuchungen()
+    {
+        return $this->buchungen;
     }
 }

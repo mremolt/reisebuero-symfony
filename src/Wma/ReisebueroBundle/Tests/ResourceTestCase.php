@@ -24,14 +24,33 @@ abstract class ResourceTestCase extends WebTestCase {
     
     public function assertValid($resource) 
     {
-        $this->assertEquals(0, $this->getValidator()->validate($resource)->count() );
+        $validation = $this->getValidator()->validate($resource);
+        $this->assertEquals(0, $validation->count(),
+                "Object " . get_class($resource) . " is not valid:\n\n" . $validation);
     }
     
     public function assertNotValid($resource) 
     {
-        $this->assertNotEquals(0, $this->getValidator()->validate($resource)->count() );
+        $this->assertNotEquals(0, $this->getValidator()->validate($resource)->count(),
+                "Object " . get_class($resource) . " is valid!");
     }
     
+    public function assertHasId($resource) 
+    {
+        $this->assertTrue($resource->getId() > 0, 
+                "The object " . get_class($resource) . "was not assigned an ID.");
+    }
+    
+    public function assertNumberOfPersistedResources($resourceName, $number)
+    {
+        $resources = $this->getEm()->createQueryBuilder()->select("r")
+            ->from(static::$entity, 'r')->getQuery()->getResult();
+        $number_of_resources = count($resources);
+        
+        $this->assertEquals($number, $number_of_resources,
+                "Expected to find $number persisted $resourceName Entities, got $number_of_resources.");
+    }
+
     /*
      * Standard tests that all resources should go through.
      * Especially ensure the build methods work for every resource
@@ -44,11 +63,8 @@ abstract class ResourceTestCase extends WebTestCase {
         $em->persist($resource);
         $em->flush();
         
-        $this->assertTrue($resource->getId() > 0);
-        
-        $resources = $em->createQueryBuilder()->select("r")->from(static::$entity, 'r')
-            ->getQuery()->getResult();
-        $this->assertEquals(1, count($resources));
+        $this->assertHasId($resource);
+        $this->assertNumberOfPersistedResources(static::$entity, 1);
     }
     
     public function testValid()

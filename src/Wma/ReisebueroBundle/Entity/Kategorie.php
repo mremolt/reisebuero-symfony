@@ -4,6 +4,7 @@ namespace Wma\ReisebueroBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Wma\ReisebueroBundle\Entity\Kategorie
@@ -38,7 +39,7 @@ class Kategorie
     public function __construct($name = '')
     {
         $this->setName($name);
-        $this->reisen = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->reisen = new ArrayCollection();
     }
     
     /**
