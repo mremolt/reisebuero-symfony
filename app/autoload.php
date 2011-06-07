@@ -27,7 +27,7 @@ $loader->registerPrefixes(array(
     'Twig_'            => __DIR__.'/../vendor/twig/lib',
 ));
 $loader->register();
-$loader->registerPrefixFallback(array(
+$loader->registerPrefixFallbacks(array(
     __DIR__.'/../vendor/symfony/src/Symfony/Component/Locale/Resources/stubs',
 ));
 
