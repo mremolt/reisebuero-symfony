@@ -2,7 +2,7 @@
 
 namespace Wma\ReisebueroBundle\Tests\Resources;
 
-use Wma\ReisebueroBundle\Tests\TestCase;
+use Wma\ReisebueroBundle\Tests\ResourceTestCase as TestCase;
 use Wma\ReisebueroBundle\Entity\Reise;
 use Wma\ReisebueroBundle\Entity\Kategorie;
 use Wma\ReisebueroBundle\Entity\Region;
@@ -10,39 +10,17 @@ use Wma\ReisebueroBundle\Entity\Region;
 class ReiseTest extends TestCase
 {
     protected static $entity = 'WmaReisebueroBundle:Reise';           
-            
-    public function testcreateReise()
-    {       
-        $reise = $this->buildReise();
-        
-        $em = $this->getEm();
-        $em->persist($reise);
-        $em->flush();
-        
-        $this->assertTrue($reise->getId() > 0);
-        
-        $reisen = $em->createQueryBuilder()->select("r")->from(static::$entity, 'r')
-            ->getQuery()->getResult();
-        $this->assertEquals(1, count($reisen));
-    }
-    
-    public function testValid() 
-    {
-        $reise = $this->buildReise();
-        $this->assertEquals(0, $this->getValidator()->validate($reise)->count() );
-    }
-
-
+       
     public function testPreisValid()
     {
-        $reise = $this->buildReise();
+        $reise = $this->build();
         $reise->setPreis(-500);
         $this->assertEquals(1, $this->getValidator()->validate($reise)->count() );
     }
     
     public function testTitelValid()
     {
-        $reise = $this->buildReise();
+        $reise = $this->build();
         $reise->setTitel('');
         $this->assertEquals(1, $this->getValidator()->validate($reise)->count() );
     }
@@ -51,7 +29,7 @@ class ReiseTest extends TestCase
     {
         $kategorie = new Kategorie('Abenteuerurlaub');
         
-        $reise = $this->buildReise();
+        $reise = $this->build();
         $reise->setKategorie($kategorie);
         
         $em = $this->getEm();
@@ -67,7 +45,7 @@ class ReiseTest extends TestCase
     {
         $region = new Region('Amazonas');
         
-        $reise = $this->buildReise();
+        $reise = $this->build();
         $reise->setRegion($region);
         
         $em = $this->getEm();
@@ -79,7 +57,7 @@ class ReiseTest extends TestCase
         $this->assertTrue( $region->getId() > 0 );
     }
         
-    protected function buildReise()
+    protected function build()
     {
         $reise = new Reise();
         $reise->setTitel("Tolle Reise in die Karibik");

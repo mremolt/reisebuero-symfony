@@ -1,4 +1,5 @@
 imports:
+    - { resource: parameters_prod.ini }
     - { resource: config.yml }
 
 #doctrine:
