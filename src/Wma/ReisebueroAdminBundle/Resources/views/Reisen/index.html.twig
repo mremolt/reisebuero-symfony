@@ -1,0 +1,15 @@
+{% extends "WmaReisebueroAdminBundle::layout.html.twig" %}
+
+{% block title "Reisebüro - Admininterface - Reiseliste" %}
+
+{% block content %}
+    <h1>Reiseliste</h1>
+    
+    {% for reise in reisen %}
+        Hallo{{ reise.titel }}
+    {% endfor %}
+        
+    <p>
+        <a href="{{ path('_admin_reisen_new') }}">Neue Reise anlegen</a>
+    </p>
+{% endblock %}

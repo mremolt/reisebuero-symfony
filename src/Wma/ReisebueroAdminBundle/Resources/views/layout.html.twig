@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/demo.css') }}" type="text/css" media="all" />
+        <title>{% block title %}Reisebüro - Admininterface{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div id="symfony-wrapper">
+            <div id="symfony-header">
+                <a href="{{ path('_admin_home') }}">
+                    <img src="{{ asset('bundles/acmedemo/images/logo.gif') }}" alt="Symfony">
+                </a>
+            </div>
+
+            {% if app.session.flash('notice') %}
+                <div class="flash-message">
+                    <em>Notice</em>: {{ app.session.flash('notice') }}
+                </div>
+            {% endif %}
+
+            {% block content_header %}
+                <ul id="menu">
+                    {% block content_header_more %}
+                        <li><a href="{{ path('_admin_home') }}">Home</a></li>
+                        <li><a href="{{ path('_admin_reisen_index') }}">Reisen bearbeiten</a></li>
+                        <li><a href="{{ path('_demo') }}">Regionen bearbeiten</a></li>
+                        <li><a href="{{ path('_demo') }}">Kategorien bearbeiten</a></li>
+                        <li><a href="{{ path('_demo') }}">Buchungen bearbeiten</a></li>
+                    {% endblock %}
+                </ul>
+
+                <div style="clear: both"></div>
+            {% endblock %}
+
+            <div class="symfony-content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

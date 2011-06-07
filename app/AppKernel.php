@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             
             new Symfony\Bundle\DoctrineMigrationsBundle\DoctrineMigrationsBundle(),
             new Wma\ReisebueroBundle\WmaReisebueroBundle(),
+            new Wma\ReisebueroAdminBundle\WmaReisebueroAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
