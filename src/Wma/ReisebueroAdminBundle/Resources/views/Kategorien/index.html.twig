@@ -1,0 +1,29 @@
+{% extends "WmaReisebueroAdminBundle::layout.html.twig" %}
+
+{% block title "Reisebüro - Admininterface - Kategorien" %}
+
+{% block content %}
+<h1>Kategorien</h1>
+
+<div style="margin-bottom: 10px;">
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+        </tr>
+        {% for kategorie in kategorien %}
+        <tr>
+            <td>{{ kategorie.name }}</td>
+            <td><a href="{{ path('_admin_kategorien_edit', { 'id': kategorie.id }) }}">editieren</a></td>
+            <td><a href="{{ path('_admin_kategorien_delete', { 'id': kategorie.id }) }}">löschen</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+<p>
+    <a href="{{ path('_admin_kategorien_new') }}">Neue Kategorie anlegen</a>
+</p>
+{% endblock %}

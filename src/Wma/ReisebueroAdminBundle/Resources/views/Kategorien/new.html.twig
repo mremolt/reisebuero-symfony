@@ -1,0 +1,14 @@
+{% extends "WmaReisebueroAdminBundle::layout.html.twig" %}
+
+{% block title "Reisebüro - Admininterface - Kategorie anlegen" %}
+
+{% block content %}
+<h1>Kategorie anlegen</h1>
+
+<form action="{{ path('_admin_kategorien_new') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    
+    <input type="submit" value="Kategorie anlegen" />
+</form>
+
+{% endblock %}

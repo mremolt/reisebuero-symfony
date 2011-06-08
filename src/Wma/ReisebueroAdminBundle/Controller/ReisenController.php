@@ -97,5 +97,23 @@ class ReisenController extends AdminBaseController
         
         $this->setNotice('Reise wurde erfolgreich gelöscht!');
         return $this->redirect($this->generateUrl('_admin_reisen_index'));
-    }        
+    }    
+    
+    /**
+     *
+     * @return \Doctrine\ORM\EntityRepository
+     */
+    protected function getRepository()
+    {
+        return $this->getEm()->getRepository('WmaReisebueroBundle:Reise');
+    }
+    
+    /**
+     *
+     * @return \Doctrine\ORM\QueryBuilder
+     */
+    protected function getQueryBuilder()
+    {
+        return $this->getRepository()->createQueryBuilder('r');
+    }
 }

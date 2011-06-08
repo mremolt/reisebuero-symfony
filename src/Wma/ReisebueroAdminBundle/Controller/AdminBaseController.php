@@ -16,24 +16,6 @@ class AdminBaseController extends Controller
         return $this->get('doctrine')->getEntityManager();
     }
     
-    /**
-     *
-     * @return \Doctrine\ORM\EntityRepository
-     */
-    protected function getRepository()
-    {
-        return $this->getEm()->getRepository('WmaReisebueroBundle:Reise');
-    }
-    
-    /**
-     *
-     * @return \Doctrine\ORM\QueryBuilder
-     */
-    protected function getQueryBuilder()
-    {
-        return $this->getRepository()->createQueryBuilder('r');
-    }
-    
     protected function persist($resource) 
     {
         $em = $this->getEm();

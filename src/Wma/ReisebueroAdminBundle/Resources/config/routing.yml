@@ -6,3 +6,8 @@ _reisen:
   resource: "@WmaReisebueroAdminBundle/Controller/ReisenController.php"
   type: annotation
   prefix: /reisen
+  
+_kategorien: 
+  resource: "@WmaReisebueroAdminBundle/Controller/KategorienController.php"
+  type: annotation
+  prefix: /kategorien

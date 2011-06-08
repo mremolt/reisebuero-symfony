@@ -5,7 +5,7 @@
 {% block content %}
     <h1>Reise anlegen</h1>
     
-    <form action="#" method="post" {{ form_enctype(form) }}>
+    <form action="{{ path('_admin_reisen_edit', { 'id': reise.id }) }}" method="post" {{ form_enctype(form) }}>
     {{ form_errors(form) }}
     {{ form_rest(form) }}
 

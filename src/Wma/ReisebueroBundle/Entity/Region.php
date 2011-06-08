@@ -24,7 +24,7 @@ class Region
 
     /**
      * @var string $name
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", unique="true")
      * @Assert\NotBlank()
      */
     private $name;
