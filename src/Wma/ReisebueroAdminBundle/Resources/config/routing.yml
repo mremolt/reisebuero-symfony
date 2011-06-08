@@ -2,6 +2,11 @@ _admin_home:
     pattern:  /
     defaults: { _controller: WmaReisebueroAdminBundle:Default:index }
     
+_admin_login: 
+  resource: "@WmaReisebueroAdminBundle/Controller/LoginController.php"
+  type: annotation
+  prefix: /login
+    
 _reisen: 
   resource: "@WmaReisebueroAdminBundle/Controller/ReisenController.php"
   type: annotation

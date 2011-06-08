@@ -5,17 +5,22 @@ namespace Wma\ReisebueroAdminBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 use Wma\ReisebueroBundle\Entity\Reise;
 use Wma\ReisebueroAdminBundle\Form\ReiseType;
 use Wma\ReisebueroAdminBundle\Controller\AdminBaseController;
 
-
+/**
+ * @Route("/reisen", name="_admin_reisen")
+ * @Secure(roles="ROLE_ADMIN")
+ */
 class ReisenController extends AdminBaseController
 {
     /**
      * @Route("/", name="_admin_reisen_index")
      * @Template()
+     * 
      */
     public function indexAction()
     {

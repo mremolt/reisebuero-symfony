@@ -2,6 +2,9 @@ _home:
     pattern:  /
     defaults: { _controller: WmaReisebueroBundle:Default:index }
     
+_frontend:
+    resource: "@WmaReisebueroBundle/Resources/config/routing.yml"
+    
 _admin:
     resource: "@WmaReisebueroAdminBundle/Resources/config/routing.yml"
     prefix:   /admin

@@ -70,7 +70,7 @@ class ReiseTest extends TestCase
         
         $qb = $em->getRepository('WmaReisebueroBundle:Reise')->createQueryBuilder('r');
         $q = $qb->orderBy('r.beginn', 'DESC')->getQuery();
-        var_dump($q->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY));
+        //var_dump($q->getResult(\Doctrine\ORM\Query::HYDRATE_ARRAY));
     }
 
 
