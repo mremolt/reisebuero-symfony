@@ -3,13 +3,39 @@
 {% block title "Reisebüro - Admininterface - Reiseliste" %}
 
 {% block content %}
-    <h1>Reiseliste</h1>
-    
-    {% for reise in reisen %}
-        Hallo{{ reise.titel }}
-    {% endfor %}
-        
-    <p>
-        <a href="{{ path('_admin_reisen_new') }}">Neue Reise anlegen</a>
-    </p>
+<h1>Reiseliste</h1>
+
+<div style="margin-bottom: 10px;">
+    <table border="1">
+        <tr>
+            <th>Titel</th>
+            <th>Preis</th>
+            <th>Kurzbeschreibung</th>
+            <th>Beginn</th>
+            <th>Ende</th>
+            <th>Kategorie</th>
+            <th>Region</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+        </tr>
+        {% for reise in reisen %}
+        <tr>
+            <td>{{ reise.titel }}</td>
+            <td>{{ reise.preis }}</td>
+            <td>{{ reise.kurzbeschreibung }}</td>
+            <td>{{ reise.beginn|date("d.m.Y") }}</td>
+            <td>{{ reise.ende|date("d.m.Y") }}</td>
+            <td>{{ reise.kategorie }}</td>
+            <td>{{ reise.region }}</td>
+            <td><a href="{{ path('_admin_reisen_edit', { 'id': reise.id }) }}">editieren</a></td>
+            <td><a href="{{ path('_admin_reisen_delete', { 'id': reise.id }) }}">löschen</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+<p>
+    <a href="{{ path('_admin_reisen_new') }}">Neue Reise anlegen</a>
+</p>
 {% endblock %}

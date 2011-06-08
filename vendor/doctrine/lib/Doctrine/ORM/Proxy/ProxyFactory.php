@@ -179,7 +179,7 @@ class ProxyFactory
                 $methods .= $method->getName() . '(';
                 $firstParam = true;
                 $parameterString = $argumentString = '';
-
+                
                 foreach ($method->getParameters() as $param) {
                     if ($firstParam) {
                         $firstParam = false;
@@ -188,7 +188,7 @@ class ProxyFactory
                         $argumentString  .= ', ';
                     }
 
-                    // We need to pick the type hint class too
+                    // We need to pick the type hint class too 
                     if (($paramClass = $param->getClass()) !== null) {
                         $parameterString .= '\\' . $paramClass->getName() . ' ';
                     } else if ($param->isArray()) {
@@ -214,7 +214,7 @@ class ProxyFactory
                 $methods .= PHP_EOL . '    }' . PHP_EOL;
             }
         }
-
+        exit;
         return $methods;
     }
 

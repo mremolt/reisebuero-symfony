@@ -8,9 +8,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 use Wma\ReisebueroBundle\Entity\Reise;
 use Wma\ReisebueroAdminBundle\Form\ReiseType;
+use Wma\ReisebueroAdminBundle\Controller\AdminBaseController;
 
 
-class ReisenController extends Controller
+class ReisenController extends AdminBaseController
 {
     /**
      * @Route("/", name="_admin_reisen_index")
@@ -18,9 +19,12 @@ class ReisenController extends Controller
      */
     public function indexAction()
     {
-        $query = $this->getQueryBuilder()->orderBy('r.beginn', 'DESC')->getQuery();
-        
-        return array('reisen' => $query->getResult());
+        $reisen = $this->getQueryBuilder()->select('r, kat, reg')
+                ->join('r.kategorie', 'kat')->join('r.region', 'reg')
+                ->orderBy('r.beginn', 'DESC')
+                ->getQuery()->getResult();
+
+        return array('reisen' => $reisen);
     }
     
     /**
@@ -32,37 +36,66 @@ class ReisenController extends Controller
         $reise = new Reise();
         $form = $this->createForm(new ReiseType(), $reise);
         
+        $request = $this->get('request');
+        if ($request->getMethod() == 'POST') {
+            $form->bindRequest($request);
+
+            if ($form->isValid()) {
+                $this->persist($reise);
+                
+                $this->setNotice('Reise wurde erfolgreich angelegt!');
+                return $this->redirect($this->generateUrl('_admin_reisen_index'));
+            }
+        }
+        
         return array(
-            'form' => $form,
+            'form' => $form->createView(),
             'reise' => $reise,
         );
     }
     
     /**
-     *
-     * @return \Doctrine\ORM\EntityManager
+     * @Route("/edit/{id}", name="_admin_reisen_edit")
+     * @Template
      */
-    protected function getEm()
-    {
-        return $this->get('doctrine')->getEntityManager();
+    public function editAction($id)
+    {        
+        $reise = $this->getQueryBuilder()->select('r, kat, reg')
+                ->join('r.kategorie', 'kat')->join('r.region', 'reg')
+                ->where('r.id = :id')->setParameter('id', $id)
+                ->orderBy('r.beginn', 'DESC')
+                ->getQuery()->getSingleResult();
+        
+        $form = $this->createForm(new ReiseType(), $reise);
+        
+        $request = $this->get('request');
+        if ($request->getMethod() == 'POST') {
+            $form->bindRequest($request);
+
+            if ($form->isValid()) {
+                $this->persist($reise);
+                
+                $this->setNotice('Reise wurde erfolgreich bearbeitet!');
+                return $this->redirect($this->generateUrl('_admin_reisen_index'));
+            }
+        }
+        
+        return array(
+            'form' => $form->createView(),
+            'reise' => $reise,
+        );
     }
     
     /**
-     *
-     * @return \Doctrine\ORM\EntityRepository
+     * @Route("/delete/{id}", name="_admin_reisen_delete")
      */
-    protected function getRepository()
+    public function deleteAction($id)
     {
-        return $this->getEm()->getRepository('WmaReisebueroBundle:Reise');
-    }
-    
-    /**
-     *
-     * @return \Doctrine\ORM\QueryBuilder
-     */
-    protected function getQueryBuilder()
-    {
-        return $this->getRepository()->createQueryBuilder('r');
-    }
-    
+        $this->getQueryBuilder()->delete('WmaReisebueroBundle:Reise r')
+                ->where('r.id = :id')->setParameter('id', $id)
+                ->getQuery()->getResult();
+        
+        $this->setNotice('Reise wurde erfolgreich gelöscht!');
+        return $this->redirect($this->generateUrl('_admin_reisen_index'));
+    }        
 }

@@ -40,6 +40,11 @@ class Region
         $this->setName($name);
         $this->reisen = new \Doctrine\Common\Collections\ArrayCollection();
     }
+    
+    public function __toString() 
+    {
+        return $this->getName();
+    }
 
     /**
      * Get id
@@ -72,13 +77,13 @@ class Region
     }
     
     /**
-     * Add reisen
+     * Add reise
      *
-     * @param Wma\ReisebueroBundle\Entity\Reise $reisen
+     * @param Wma\ReisebueroBundle\Entity\Reise $reise
      */
-    public function addReisen(\Wma\ReisebueroBundle\Entity\Reise $reisen)
+    public function addReise(\Wma\ReisebueroBundle\Entity\Reise $reise)
     {
-        $this->reisen[] = $reisen;
+        $this->reisen[] = $reise;
     }
 
     /**

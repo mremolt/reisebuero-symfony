@@ -42,6 +42,11 @@ class Kategorie
         $this->reisen = new ArrayCollection();
     }
     
+    public function __toString() 
+    {
+        return $this->getName();
+    }
+    
     /**
      * Get id
      *
@@ -73,13 +78,13 @@ class Kategorie
     }
 
     /**
-     * Add reisen
+     * Add reise
      *
-     * @param Wma\ReisebueroBundle\Entity\Reisen $reisen
+     * @param Wma\ReisebueroBundle\Entity\Reise $reise
      */
-    public function addReisen(\Wma\ReisebueroBundle\Entity\Reisen $reisen)
+    public function addReisen(\Wma\ReisebueroBundle\Entity\Reise $reise)
     {
-        $this->reisen[] = $reisen;
+        $this->reisen[] = $reise;
     }
 
     /**
