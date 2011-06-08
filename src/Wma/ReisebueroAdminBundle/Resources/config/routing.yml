@@ -11,3 +11,8 @@ _kategorien:
   resource: "@WmaReisebueroAdminBundle/Controller/KategorienController.php"
   type: annotation
   prefix: /kategorien
+  
+_regionen: 
+  resource: "@WmaReisebueroAdminBundle/Controller/RegionenController.php"
+  type: annotation
+  prefix: /regionen

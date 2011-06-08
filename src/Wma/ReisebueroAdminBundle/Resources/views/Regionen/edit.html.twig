@@ -1,0 +1,14 @@
+{% extends "WmaReisebueroAdminBundle::layout.html.twig" %}
+
+{% block title "Reisebüro - Admininterface - Region bearbeiten" %}
+
+{% block content %}
+<h1>Region anlegen</h1>
+
+<form action="{{ path('_admin_regionen_edit', { "id": kategorie.id }) }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    
+    <input type="submit" value="Region bearbeiten" />
+</form>
+
+{% endblock %}

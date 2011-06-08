@@ -1,0 +1,29 @@
+{% extends "WmaReisebueroAdminBundle::layout.html.twig" %}
+
+{% block title "Reisebüro - Admininterface - Regionen" %}
+
+{% block content %}
+<h1>Regionen</h1>
+
+<div style="margin-bottom: 10px;">
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+        </tr>
+        {% for region in regionen %}
+        <tr>
+            <td>{{ region.name }}</td>
+            <td><a href="{{ path('_admin_regionen_edit', { 'id': region.id }) }}">editieren</a></td>
+            <td><a href="{{ path('_admin_regionen_delete', { 'id': region.id }) }}">löschen</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+<p>
+    <a href="{{ path('_admin_regionen_new') }}">Neue Region anlegen</a>
+</p>
+{% endblock %}
